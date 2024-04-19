@@ -1,0 +1,39 @@
+CREATE TABLE Clientes (
+	ID_Cliente NUMBER(5) PRIMARY KEY,
+	Nombre VARCHAR2(50),
+	Apellido VARCHAR2(50),
+	Telefono VARCHAR2(15),
+	Direccion VARCHAR2(100),
+	Correo VARCHAR2(50),
+	Contraseña VARCHAR2(127)
+);
+CREATE TABLE Pedidos (
+	ID_Pedido NUMBER(5) PRIMARY KEY,
+	ID_Cliente NUMBER(5),
+	Fecha DATE,
+	Total DECIMAL(5, 2),
+	CONSTRAINT fk_Clientes FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID_Cliente)
+);
+CREATE TABLE Productos (
+	ID_Producto NUMBER(5) PRIMARY KEY,
+	Nombre VARCHAR2(100),
+	Descripcion VARCHAR2(255),
+	Precio DECIMAL(5, 2),
+	Disponibilidad BOOLEAN
+);
+CREATE TABLE Ingredientes (
+	ID_Ingrediente NUMBER(5) PRIMARY KEY,
+	Nombre VARCHAR2(50),
+	Stock INT,
+	Precio DECIMAL(10, 2)
+);
+ 
+CREATE TABLE Detalles_Pedido (
+	ID_Detalle NUMBER(5) PRIMARY KEY,
+	ID_Pedido NUMBER(5),
+	ID_Producto NUMBER(5),
+	Cantidad INT,
+	Subtotal DECIMAL(10, 2),
+	CONSTRAINT fk_Pedidos FOREIGN KEY (ID_Pedido) REFERENCES Pedidos(ID_Pedido),
+	CONSTRAINT fk_Productos FOREIGN KEY (ID_Producto) REFERENCES Productos(ID_Producto)
+);
