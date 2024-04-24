@@ -1,0 +1,45 @@
+.contenedor1
+{
+
+}
+
+.table_izq
+{
+    width: 50%;
+    border: 1px solid black;
+        .foto1
+        {
+            width: 100%;
+        }
+}
+
+.table_der
+{
+    width: 50%;
+    border: 1px solid black;
+    position: relative;
+        .table_logo
+        {
+            width: 25%;
+            padding-bottom: 380px;
+        }
+
+        .table_boton
+        {
+            position: absolute;
+            top: 300px;
+            left: 20px;
+            color: black;
+            letter-spacing: 1.5px;
+            font-size: 16px;
+            border: 2px solid black;
+            width: 600px;
+            height: 100px;
+        }
+
+        .table_p
+        {
+
+        }
+}
+
