@@ -1,3 +1,4 @@
+
 html
 {
     font-family: Poppins,helvetica,arial,sans-serif;
@@ -12,6 +13,7 @@ header
     padding-right: 40px;
     padding-top: 10px;
 }
+
 nav
 {
     display: flex;
@@ -25,10 +27,15 @@ nav
 .nav_list
 {
     margin: 15px; 
+    display: flex;
+    align-items: center;
 }
-.nav_logo{
+
+.nav_logo
+{
     width: 100px;
 }
+
 ul
 {
     list-style-type: none;
@@ -51,11 +58,12 @@ a
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .rrsslogo{
-    /*transform: scale(1); por si queremos hacer los svg mas grandes luego*/
     padding-left: 5px;
     padding-right: 5px;
 }
+
 .botonpedidos{
     border: 2px solid black;
     padding: 10px;
