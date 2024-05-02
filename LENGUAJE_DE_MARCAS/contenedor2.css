@@ -1,5 +1,21 @@
+.contenedor2
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .foto_cont2
 {
-    position: absolute;
-    left: 35%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.textos
+{
+    display: flex;
+    gap: 300px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: "Fjalla One", sans-serif;
 }
