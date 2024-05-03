@@ -1,0 +1,11 @@
+.texto
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card
+{
+    border: 1px black solid;
+}
