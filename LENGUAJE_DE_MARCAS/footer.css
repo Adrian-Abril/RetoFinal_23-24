@@ -1,0 +1,18 @@
+footer 
+{
+  background-color: #ffffff;
+  color: #fff;
+  padding: 20px 0;
+}
+
+footer table 
+{
+  width: 100%;
+  text-align: center;
+}
+
+footer .legal
+{
+  display: flex;
+  align-items: center;
+}
