@@ -1,11 +1,6 @@
-
-html
-{
-    font-family: Poppins,helvetica,arial,sans-serif;
-}
-
 header
 {
+    font-family: Poppins,helvetica,arial,sans-serif;
     background: white;
     border-bottom: 1px solid rgb(218, 215, 215);
     padding-left: 80px;
@@ -14,7 +9,7 @@ header
     padding-bottom:10px;
 }
 
-nav
+.header
 {
     display: flex;
     flex-direction: row;
@@ -31,29 +26,17 @@ nav
     align-items: center;
 }
 
-.nav_list:hove
-{
-    color: rgb(0, 90, 0);
-}
-
 .nav_logo
 {
     width: 100px;
 }
 
-ul
-{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-li
+.nav_list li
 {
     display: inline;
 }
 
-a
+.nav_list a
 {
     text-decoration: none;
     color: black;
