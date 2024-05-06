@@ -1,11 +1,22 @@
-.texto
+.texto-c3
 {
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
 
-.card
+.contenedor-cartas
 {
-    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+
 }
+
+.cards {
+    border: 5px solid rgb(255, 255, 255);
+    width: 275px;
+  }
+
+.imagen-c3 {
+    width: 100%;
+  }
