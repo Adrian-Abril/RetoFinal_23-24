@@ -7,12 +7,12 @@
   justify-content: center;
 }
 
-.contenedor-footer .derechos
+.derechos
 {
   padding-left: 100px;
 }
 
-.contenedor-footer .legal {
+.legal {
   padding-right: 150px;
   margin: 0;
   margin-left: auto;
