@@ -12,11 +12,16 @@
 
 }
 
-.cards {
+.cards-c3 {
+    position: relative;
     border: 5px solid rgb(255, 255, 255);
     width: 275px;
   }
 
 .imagen-c3 {
     width: 100%;
+  }
+  
+  .cards-c3:hover .imagen-c3 {
+    filter: brightness(70%);
   }
