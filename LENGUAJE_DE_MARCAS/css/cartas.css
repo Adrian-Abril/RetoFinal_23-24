@@ -1,0 +1,46 @@
+body
+{
+    margin: 0;
+}
+
+.nav-cartas ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+.nav-cartas li
+{
+    float: left;
+}
+  
+.nav-cartas  li a
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-cartas li a:hover
+{
+    background-color: #111;
+}
+
+/************************************************/
+
+.carta-entrantes h1
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
