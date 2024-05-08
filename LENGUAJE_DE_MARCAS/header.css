@@ -1,6 +1,10 @@
-header
+html
 {
     font-family: Poppins,helvetica,arial,sans-serif;
+}
+
+header
+{
     background: white;
     border-bottom: 1px solid rgb(218, 215, 215);
     padding-left: 80px;
@@ -9,7 +13,7 @@ header
     padding-bottom:10px;
 }
 
-.header
+nav
 {
     display: flex;
     flex-direction: row;
@@ -31,30 +35,56 @@ header
     width: 100px;
 }
 
-.nav_list li
+ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li
 {
     display: inline;
 }
 
-.nav_list a
+a
 {
     text-decoration: none;
     color: black;
     letter-spacing: 1.5px;
+    text-shadow: 0px 0px 1px transparent;
     font-size: 16px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.rrsslogo
-{
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+.rrsslogo{
     padding-left: 5px;
     padding-right: 5px;
 }
 
-.botonpedidos
-{
+.botonpedidos{
     border: 2px solid black;
     padding: 10px;
-    cursor: pointer;
 }
