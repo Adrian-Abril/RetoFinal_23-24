@@ -1,0 +1,28 @@
+.contenedor2
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.foto_cont2
+{
+    justify-content: center;
+    max-width: 100%;
+    height:auto;
+}
+
+.textos-c2
+{     
+    max-width: 80%;
+    display: flex;
+    gap: 50px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: "Fjalla One", sans-serif;
+
+}
