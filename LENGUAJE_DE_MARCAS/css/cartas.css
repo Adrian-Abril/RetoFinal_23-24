@@ -113,3 +113,11 @@ body
     transform: rotateY(180deg);
   }
 
+  .flip-card-back p
+  {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vh;
+    margin: 15%;
+    margin-top: 10%;
+  }
+
