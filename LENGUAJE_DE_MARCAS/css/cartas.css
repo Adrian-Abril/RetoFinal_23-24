@@ -108,7 +108,7 @@ body
   
  
   .flip-card-back {
-    background-color: rgb(0, 0, 0);
+    background: radial-gradient(rgb(131, 131, 131), rgb(0, 0, 0));
     color: white;
     transform: rotateY(180deg);
   }
@@ -119,5 +119,12 @@ body
     font-size: 2vh;
     margin: 15%;
     margin-top: 10%;
+  }
+
+  /****************************************/
+
+  .burgers-img
+  {
+    background: radial-gradient(rgb(131, 131, 131), rgb(0, 0, 0));
   }
 
