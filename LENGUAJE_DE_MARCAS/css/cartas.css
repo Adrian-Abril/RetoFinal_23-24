@@ -67,6 +67,25 @@ body
   margin: 1%;
 }
 
+/****************************************************/
+
+.entrantes-img-menu 
+{
+  padding-left: 30%;
+  padding-right: 30%;
+  text-align: center;
+}
+
+.entrantes-img-menu ul
+{
+  list-style: none;
+}
+
+.entrantes-img-menu .flip-card
+{
+  display: inline-block;
+  margin: 1%;
+}
 
 
 /***************************************************/
