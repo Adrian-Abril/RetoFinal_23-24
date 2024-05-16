@@ -1,0 +1,150 @@
+body
+{
+    margin: 0;
+}
+
+.nav-cartas ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+.nav-cartas li
+{
+    float: left;
+}
+  
+.nav-cartas  li a
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-cartas li a:hover
+{
+    background-color: #111;
+}
+
+/************************************************/
+
+.carta-entrantes h1
+{
+  margin-top: 50px;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+/***************************************************/
+
+.entrantes-img
+{
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+  padding-bottom: 162px;
+}
+
+.entrantes-img ul
+{
+  list-style: none;
+
+}
+
+.entrantes-img .flip-card
+{
+  display: inline-block;
+  margin: 1%;
+}
+
+/****************************************************/
+
+.entrantes-img-menu 
+{
+  padding-left: 30%;
+  padding-right: 30%;
+  text-align: center;
+}
+
+.entrantes-img-menu ul
+{
+  list-style: none;
+}
+
+.entrantes-img-menu .flip-card
+{
+  display: inline-block;
+  margin: 1%;
+}
+
+
+/***************************************************/
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    
+  }
+  
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+  }
+  
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+
+  .flip-card-front {
+    color: black;
+  }
+  
+ 
+  .flip-card-back {
+    background: radial-gradient(rgb(131, 131, 131), rgb(0, 0, 0));
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-back p
+  {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vh;
+    margin: 15%;
+    margin-top: 10%;
+  }
+
+  /****************************************/
+
+  .degradado
+  {
+    background: radial-gradient(rgb(131, 131, 131), rgb(0, 0, 0));
+  }
+
