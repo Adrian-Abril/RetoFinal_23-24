@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class ProductoDao implements IDao<Producto, Integer> {
     private MotorSQL motorSQL;
 
+
     public ProductoDao() {
         this.motorSQL = new MotorSQL();
     }
@@ -16,11 +17,11 @@ public class ProductoDao implements IDao<Producto, Integer> {
     public int add(Producto producto) {
         int result = 0;
         MotorSQL motor = new MotorSQL();
-        PreparedStatement preparedStatement = null; // Declarar el objeto PreparedStatement
+        PreparedStatement preparedStatement = null;
         try {
             motor.connect();
-            String sql = "INSERT INTO PRODUCTO (ID_PRODUCTO, NOMBRE, DESCRIPCION, PRECIO, IMAGEN, ID_CATPRODUCTO) VALUES (?, ?, ?, ?, ?, ?)";
-            preparedStatement = motor.prepareStatement(sql); // Obtener PreparedStatement desde MotorSQL
+            String sql = "INSERT INTO PRODUCTO (ID_PRODUCTO, NOMBRE, DESCRIPCION, PRECIO, IMAGEN, ID_CATPRODUCTO)";
+            preparedStatement = motor.prepareStatement(sql);
 
             preparedStatement.setInt(1, producto.getIdProducto());
             preparedStatement.setString(2, producto.getNombre());
@@ -33,7 +34,6 @@ public class ProductoDao implements IDao<Producto, Integer> {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // Cerrar el PreparedStatement dentro del bloque finally para asegurarse de que se cierre correctamente
             if (preparedStatement != null) {
                 try {
                     preparedStatement.close();
@@ -46,18 +46,67 @@ public class ProductoDao implements IDao<Producto, Integer> {
         return result;
     }
 
-
     @Override
     public int delete(Integer id) {
-        // Implementación de la eliminación de un producto en la base de datos
-        return 0;
+        int result = 0;
+        MotorSQL motor = new MotorSQL();
+        PreparedStatement preparedStatement = null;
+        try {
+            motor.connect();
+            String sql = "DELETE FROM PRODUCTO WHERE ID_PRODUCTO = ?";
+            preparedStatement = motor.prepareStatement(sql);
+
+            preparedStatement.setInt(1, id);
+
+            result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            motor.disconnect();
+        }
+        return result;
     }
 
     @Override
     public int update(Producto producto) {
-        // Implementación de la actualización de un producto en la base de datos
-        return 0;
+        int result = 0;
+        MotorSQL motor = new MotorSQL();
+        PreparedStatement preparedStatement = null;
+        try {
+            motor.connect();
+            String sql = "UPDATE PRODUCTO SET NOMBRE = ?, DESCRIPCION = ?, PRECIO = ?, IMAGEN = ?, ID_CATPRODUCTO = ? WHERE ID_PRODUCTO = ?";
+            preparedStatement = motor.prepareStatement(sql);
+
+            preparedStatement.setString(1, producto.getNombre());
+            preparedStatement.setString(2, producto.getDescripcion());
+            preparedStatement.setDouble(3, producto.getPrecio());
+            preparedStatement.setString(4, producto.getImagen());
+            preparedStatement.setInt(5, producto.getIdCatProducto());
+            preparedStatement.setInt(6, producto.getIdProducto());
+
+            result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            motor.disconnect();
+        }
+        return result;
     }
+
 
     @Override
     public ArrayList<Producto> findAll(Producto bean) {
@@ -98,7 +147,7 @@ public class ProductoDao implements IDao<Producto, Integer> {
                 producto.setImagen(rs.getString("IMAGEN"));
                 producto.setIdCatProducto(rs.getInt("ID_CATPRODUCTO"));
 
-                productos.add(producto);  // Corrección: agregar a la lista de productos
+                productos.add(producto);
             }
 
         } catch (Exception ex) {
