@@ -1,0 +1,179 @@
+body
+{
+    margin: 0;
+    background-color: rgb(243, 243, 243);
+}
+
+.nav-cartas ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+.nav-cartas li
+{
+    float: left;
+}
+  
+.nav-cartas  li a
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-cartas li a:hover
+{
+    background-color: #111;
+}
+
+/************************************************/
+.carta-entrantes
+{
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.carta-entrantes h1
+{
+  margin: 0;
+  padding-top: 50px;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+/***************************************************/
+
+.entrantes-img
+{
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  
+}
+
+.entrantes-img ul
+{
+  list-style: none;
+
+}
+
+.entrantes-img .flip-card
+{
+  display: inline-block;
+  margin: 1%;
+}
+
+/****************************************************/
+
+.entrantes-img-menu {
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+
+.entrantes-img-menu ul
+{
+  list-style: none;
+}
+
+.entrantes-img-menu .flip-card
+{
+  display: inline-block;
+  margin: 1%;
+}
+
+
+/***************************************************/
+.flip-card {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  background: radial-gradient(rgb(0, 0, 0),rgb(85, 85, 85));
+}
+
+.flip-card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  background: radial-gradient(rgb(0, 0, 0),rgb(85, 85, 85));
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.flip-card:hover .flip-card-front {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.flip-card:hover .flip-card-back {
+  opacity: 1;
+  visibility: visible;
+}
+.flip-card-back p
+{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2vh;
+  margin: 15%;
+  margin-top: 10%;
+}
+
+  /****************************************/
+
+  .degradado
+  {
+    background: radial-gradient(rgb(131, 131, 131), rgb(0, 0, 0));
+  }
+
+  /******************************************/
+
+  .flip-card h3 
+  {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.56px;
+    text-align: left;
+    color: #fff;
+    position: absolute;
+    z-index: 5;
+    top: 20px;
+    left: 25px;
+    margin: 0;
+    text-shadow: 0 3px 6px rgba(0,0,0,.16);
+    transition: color .3s ease;
+    max-width: 85%;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+}
+
+.bebidas{
+  width: 200px;
+  height: 200px;
+}

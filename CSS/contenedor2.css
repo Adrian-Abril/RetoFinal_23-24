@@ -1,0 +1,35 @@
+.contenedor2
+{
+    background-color: rgb(255,255,255);
+}
+.contenedor2a
+{
+    display: flex;
+    justify-content: center;
+}
+.contenedor2b
+{
+    display: flex;
+    padding-left: 5%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 60px;
+    gap:50px;
+
+}
+
+.imagen-c2
+{
+    display: flex;
+    align-items: center;
+}
+.textos-c2
+{     
+    display: flex;
+    gap: 50px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-family: "Fjalla One", sans-serif;
+    flex-direction: column;
+    justify-content: space-around;
+}

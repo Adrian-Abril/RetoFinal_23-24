@@ -1,0 +1,35 @@
+.contenedor3
+{
+  padding-top: 25px; 
+  padding-bottom: 50px;
+  background-color: rgb(247, 247, 247);
+  
+}
+.contenedormenu{
+  display: flex;
+  justify-content: center;
+}
+.texto-c3
+{
+    display: flex;
+    justify-content: center;
+}
+.contenedor-cartas
+{
+    display: flex;
+    justify-content: center;
+    gap:10px
+
+}
+
+.cards-c3 {
+    width: 275px;
+  }
+
+.imagen-c3 {
+    width: 100%;
+  }
+
+  .cards-c3:hover .imagen-c3 {
+    filter: brightness(70%);
+  }
