@@ -1,1 +1,4 @@
-
+javax.servlet:javax.servlet-api:4.0.1
+com.mysql:mysql-connector-j:8.4.0
+com.google.code.gson:gson:2.10.1
+com.oracle.database.jdbc.ojdbc11:21.3.0.0
