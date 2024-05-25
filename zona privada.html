@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+    <link rel="stylesheet" href="private.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>ADMIN</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">ORDERS</a></li>
+            <li><a href="#">CLIENTS</a></li>
+            <li class="active"><a href="#">EMPLOYEES</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#" class="logout-button">LOG OUT</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Employees</h1>
+            <div class="actions">
+                <button class="add-button">ADD</button>
+                <button class="delete-button">DELETE</button>
+                <button class="update-button">UPDATE</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>EmployeeId</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Hire Date</th>
+                    <th>Salary</th>
+                    <th>State</th>
+                    <th>JobId</th>
+                    <th>UserId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example row -->
+                <tr>
+                    <td>EMP001</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>123456789</td>
+                    <td>May 27, 2024</td>
+                    <td>5000</td>
+                    <td>true</td>
+                    <td>JOB001</td>
+                    <td>USER001</td>
+                </tr>
+                <!-- Add more rows dynamically with JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
