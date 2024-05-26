@@ -1,0 +1,70 @@
+body
+{   
+    margin: 0;
+    background-color: rgb(243, 243, 243);
+    font-family: Poppins,helvetica,arial,sans-serif;
+}
+header
+{
+    background: white;
+    border-bottom: 1px solid rgb(218, 215, 215);
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 10px;
+    padding-bottom:10px;
+}
+
+nav
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.nav_list
+{
+    margin: 15px; 
+    display: flex;
+    align-items: center;
+}
+
+.nav_logo
+{
+    width: 100px;
+}
+
+ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li
+{
+    display: inline;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1.5px;
+    text-shadow: 0px 0px 1px transparent;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rrsslogo{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.botonpedidos{
+    border: 2px solid black;
+    padding: 10px;
+}

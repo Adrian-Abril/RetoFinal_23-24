@@ -1,0 +1,65 @@
+.contenedor2 {
+    background-color: rgb(255, 255, 255);
+    padding: 5vh;
+    padding-top: 2vh;
+}
+
+.contenedor2a {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor2b {
+    display: flex;
+    gap: 1vh;
+}
+
+.foto_cont2 {
+    max-width: 20vw;
+}
+
+.imagen-c2 {
+    display: flex;
+    align-items: center;
+}
+
+.textos-c2 {
+    display: flex;
+    gap: 3vw;
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    font-family: "Fjalla One", sans-serif;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Media queries para ajustar el diseño en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .contenedor2b {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .textos-c2 {
+        font-size: 4vw;
+        text-align: center;
+        gap: 2vw;
+    }
+
+    .foto_cont2 {
+        max-width: 50vw;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .foto_cont2 {
+        display: none;
+    }
+
+    .textos-c2 {
+        font-size: 5vw;
+        text-align: center;
+        gap: 1vw;
+    }
+}
