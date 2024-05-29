@@ -1,0 +1,94 @@
+.inicio {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.contenedor1 {
+    display: flex;
+    width: 100%;
+    padding: 0;
+}
+.table_izq {
+    width: 50%;
+}
+.table_izq .foto1 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.table_der {
+    display: flex;
+    max-width: 50%;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(247, 247, 247);
+    padding: 4vw;
+    gap: 1vw;
+}
+
+.table_logo {
+    width: auto;
+    max-width: 165px;
+}
+
+.table_boton {
+    width: 30vw;
+    height: 5vw;
+    border: 0;
+    letter-spacing: 1.5px;
+    background-color: rgb(0, 90, 0);
+    cursor: pointer;
+    transition: ease-out 0.4s;
+}
+
+.table_boton:hover {
+    filter: brightness(70%);
+}
+
+.table_der .boton_a {
+    color: white;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.table_der .table_p {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: "Fjalla One", sans-serif;
+}
+
+@media (max-width: 768px) {
+    .table_izq .foto1 {
+        display: none;
+    }
+    .table_der {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contenedor1 {
+        flex-direction: column;
+        align-items: center;
+        padding: 2vw;
+    }
+
+    .table_der {
+        max-width: 100%;
+        
+        text-align: center;
+    }
+
+    .table_boton {
+        width: 50vw;
+        height: 8vw;
+    }
+
+    .table_der .boton_a {
+        font-size: 20px;
+    }
+
+    .table_der .table_p {
+        font-size: 4vw;
+    }
+}

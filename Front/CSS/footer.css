@@ -1,0 +1,36 @@
+.contenedor-footer
+  {
+    display: flex;
+    padding: 5vh 10vh 5vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    border-top: 1px solid rgb(218, 215, 215);
+    background-color: white;
+  }
+.cook
+  {
+  list-style-type: none;
+  font-size: 2vh;
+  }
+.cook a{
+  text-decoration: none;
+  color: rgb(31, 94, 2);
+  }
+
+@media (max-width: 1200px) {
+  .contenedor-footer
+  {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 2vh 2vh 2vh
+  }
+  .cook
+  {
+    text-align: center;
+    padding-left: 0px;
+    font-size: 2vh;
+  }
+
+}

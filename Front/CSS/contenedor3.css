@@ -1,0 +1,72 @@
+/* Estilos generales */
+.contenedor3
+{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgb(247, 247, 247);
+}
+.texto-c3
+{
+    display: flex;
+    justify-content: center;
+}
+.cards-c3:hover .imagen-c3 
+{
+    filter: brightness(70%);
+}
+.contenedor-cartas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 5vh;
+  padding-top: 2vh;
+}
+
+.cards-c3 {
+  flex: 1 1 20%; 
+  max-width: 300px; 
+  box-sizing: border-box;
+
+}
+
+.imagen-c3 {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.contenedormenu{
+  display: flex;
+  justify-content: center;
+}
+
+.foto_cont3 {
+  max-width: 25vw;
+  min-width: 20vw;
+}
+
+
+@media (max-width: 1200px) {
+  .cards-c3 {
+      flex: 1 1 30%;
+      max-width: 200px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-c3 {
+      flex: 1 1 45%;
+      max-width: 200px; 
+  }
+  .foto_cont3 {
+    max-width: 50vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-c3 {
+      flex: 1 1 80%;
+      max-width: 200px; 
+  }
+}
