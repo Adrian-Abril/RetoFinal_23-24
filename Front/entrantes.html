@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/cartas.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" href="IMAGENES/Header Logo.png">
+    <title>BURGERFRAME</title>
+    
+<!-- Cookies no tocar -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB7HJ8K');</script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="./css/estilos.css">
+</head>
+        <div class="aviso-cookies" id="aviso-cookies">
+            <h3 class="titulo">Cookies</h3>
+            <p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+            <button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
+            <a class="enlace" href="aviso-cookies.html">Aviso de Cookies</a>
+        </div>
+        <div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+        <script src="js/aviso-cookies.js"></script>
+<!-- Cookies hasta aqui -->
+<body>
+    <header>
+        <div id="nav_logo">
+            <img src="IMAGENES/Header Logo.png" alt="logo" width="100vh" class="nav_logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="entrantes.html">MENUS</a></li>
+                <li><a href="location.html">LOCATION</a></li>
+                <li class="botonpedidos"><a href="carrito.html">ORDER</a></li>
+
+                <li id="loginButton" class="botonpedidos">
+                    <a href="login.html">LOGIN</a></li>
+                <li id="logoutButton" class="botonpedidos" style="display:none;">
+                    <a href="#" onclick="logout()">LOG OUT</a></li>
+                <li id="registerButton" class="botonpedidos" style="display:none;">
+                    <a href="register.html">REGISTER</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // Agregar evento de carga del documento para verificar si el usuario está autenticado
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar si el usuario está autenticado
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            // Si el usuario está autenticado, ocultar el botón de "Login" y "Register", y mostrar el de "Log out"
+            if (isLoggedIn) {
+                const loginButton = document.getElementById('loginButton');
+                loginButton.style.display = 'none';
+                const logoutButton = document.getElementById('logoutButton');
+                logoutButton.style.display = 'block';
+                const registerButton = document.getElementById('registerButton');
+                registerButton.style.display = 'none';
+            }
+        });
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.setItem('isLoggedIn', 'false'); // Marcar al usuario como no autenticado
+            window.location.href = 'index.html'; // Redirigir a la página de inicio
+        }
+    </script>
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+    
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+            });
+        </script>
+
+    <nav class="nav-cartas">
+        <ul>
+            <li><a href="entrantes.html">APPETIZERS</a></li>
+            <li><a href="burgers.html">BURGERS</a></li>
+            <li><a href="postres.html">DESSERTS</a></li>
+            <li><a href="bebidas.html">DRINKS</a></li>
+            <li><a href="menus.html">MENUS</a></li>
+        </ul>
+    </nav>
+    <div class="carta-entrantes">
+        <img class="imagen-c3" src="IMAGENES/TEXT/appetizers.png" alt="ENTRANTES" style="width:400px;">
+        <div class="entrantes-img">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="IMAGENES/ENTRANTES/entrante1.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Alitas de pollo rebozadas a la perfección, con bacon bits, cebolla morada y nuestra salsa 50 Burger Spread.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="IMAGENES/ENTRANTES/entrante2.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Triángulos rebozados con chips de nachos, rellenos de chili con carne y acompañados con salsa de tomate casera y nata agria. ¡Pídeme, que no pico!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="IMAGENES/ENTRANTES/entrante3.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>¡Están tan ricos que se acaban en lo que dura un ÑAM! Palitos fritos rellenos de queso derretido, acompañados con tu salsa favorita de la casa. ¡Tradición venezolana!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="IMAGENES/ENTRANTES/entrante4.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>La versión italiana de nuestros famosos teques, rellenos de queso derretido, orégano, albahaca y tomate, acompañados de salsa de tomate casera.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="IMAGENES/ENTRANTES/entrante5.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Tiras de pollo empanadas, acompañadas de tu salsa favorita de la casa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="IMAGENES/ENTRANTES/entrante6.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Un clásico para compartir, ¡el último tiene que ser tuyo! Nachos bañados en chili con carne, guacamole, tomate, nata agria, jalapeños y Enquésame. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="IMAGENES/ENTRANTES/entrante7.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Aros de queso gouda derretido, setas y trufa acompañados de nuestra salsa Mayo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="IMAGENES/ENTRANTES/entrante8.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Los clásicos aros de cebolla acompañados de salsa Barbacoa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="contenedor-footer">
+            <span class="cook">©2024 BURGERFRAME GROUP, ALL RIGHTS RESERVED</span>
+            <div class="cook">
+                <a href="https://www.cookiepolicygenerator.com/live.php?token=Q0uU2XcYt5VDdWCQ9Llpu22n9X6GMfTA
+                ">Cookies</a></li>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

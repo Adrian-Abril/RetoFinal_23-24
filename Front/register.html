@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="CSS/Sign_in.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="login">
+            <div class="title">
+                <a href="index.html" class="casita">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 3l29 29h-8v29h-14V41H25v20H11V32H3z" fill="#ffffff"/>
+                    </svg>
+                </a>
+                <span>burgerFrame</span>
+            </div>
+            <form id="registerForm">
+                <div class="row">
+                    <input type="text" id="nombre" placeholder="Name" required>
+                </div>
+                <div class="row">
+                    <input type="text" id="apellidos" placeholder="Last Name" required>
+                </div>
+                <div class="row">
+                    <input type="text" id="email" placeholder="Email">
+                </div>
+                <div class="row">
+                    <input type="text" id="telefono" placeholder="Phone">
+                </div>
+                <div class="row">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="row">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <div class="row button">
+                    <input type="submit" value="Sign up now">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const apellidos = document.getElementById('apellidos').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+
+            if (!email && !telefono) {
+                alert('Debe proporcionar al menos un email o un teléfono');
+                return;
+            }
+
+            const data = {
+                nombre: nombre,
+                apellidos: apellidos,
+                email: email,
+                telefono: telefono,
+                password: password
+            };
+
+            fetch('http://localhost:8080/burgerFrame/Controller?ACTION=CLIENTE.ADD', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+
+</html>

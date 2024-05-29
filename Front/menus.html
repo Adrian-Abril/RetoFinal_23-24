@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cartas.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" href="IMAGENES/Header Logo.png">
+    <title>MENUS</title>
+    
+<!-- Cookies no tocar -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB7HJ8K');</script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="./css/estilos.css">
+</head>
+        <div class="aviso-cookies" id="aviso-cookies">
+            <h3 class="titulo">Cookies</h3>
+            <p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+            <button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
+            <a class="enlace" href="aviso-cookies.html">Aviso de Cookies</a>
+        </div>
+        <div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+        <script src="js/aviso-cookies.js"></script>
+<!-- Cookies hasta aqui -->
+<body>
+
+        <header>
+            <div id="nav_logo">
+                <img src="IMAGENES/Header Logo.png" alt="logo" width="100vh" class="nav_logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="entrantes.html">MENUS</a></li>
+                    <li><a href="location.html">LOCATION</a></li>
+                    <li class="botonpedidos"><a href="carrito.html">ORDER</a></li>
+    
+                    <li class="botonpedidos">
+                        <a href="carrito.html">LOGIN</a></li>
+                    <li class="botonpedidos">
+                        <a href="carrito.html">REGISTER</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+    
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+            });
+        </script>
+    <nav class="nav-cartas">
+        <ul>
+            <li><a href="entrantes.html">APPETIZERS</a></li>
+            <li><a href="burgers.html">BURGERS</a></li>
+            <li><a href="postres.html">DESSERTS</a></li>
+            <li><a href="bebidas.html">DRINKS</a></li>
+            <li><a href="menus.html">MENUS</a></li>
+        </ul>
+    </nav>
+    <div class="carta-entrantes">
+        <img class="imagen-c3" src="IMAGENES/TEXT/menus.png" alt="ENTRANTES" style="width:400px;">
+        <div class="entrantes-img-menu">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>emperador</h3>
+                        <img src="IMAGENES/MENU/MENU_EMPERADOR.png" alt="Avatar" style="width:300px;height:300px;" class="degradado">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Nuestro super menu emperador que incluye hamburguesa doble + patatas + entrante + bebida</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>menu frame</h3>
+                        <img src="IMAGENES/MENU/MENU-FRAME.png" alt="Avatar" style="width:300px;height:300px;"  class="degradado">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Nuestro menu Frame que incluye hamburguesa doble + patatas + bebida</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>basico</h3>
+                        <img src="IMAGENES/MENU/MENU_BASICO.png" alt="Avatar" style="width:300px;height:300px;"  class="degradado">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Nuestro menu basico que incluye Hamburguesa basica + bebida + patatas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>a medias</h3>
+                        <img src="IMAGENES/MENU/MENU_A_MEDIAS.png" alt="Avatar" style="width:300px;height:300px;"  class="degradado">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Nuestro menu a medias que incluye 2 hamburguesas basicas + 2 bebidas + 2 patatas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="contenedor-footer">
+            <span class="cook">©2024 BURGERFRAME GROUP, ALL RIGHTS RESERVED</span>
+            <div class="cook">
+                <a href="https://www.cookiepolicygenerator.com/live.php?token=Q0uU2XcYt5VDdWCQ9Llpu22n9X6GMfTA
+                ">Cookies</a></li>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

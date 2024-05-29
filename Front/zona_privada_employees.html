@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+    <link rel="stylesheet" href="private1.css">
+    <script src="js/employees.js" defer></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>ADMIN</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="zona_privada_products.html">PRODUCTS</a></li>
+            <li><a href="zona_privada_orders.html">ORDERS</a></li>
+            <li><a href="zona_privada_clients.html">CLIENTS</a></li>
+            <li class="active"><a href="#">EMPLOYEES</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#" class="logout-button">LOG OUT</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Employees</h1>
+            <div class="actions">
+                <button class="add-button">ADD</button>
+                <button class="delete-button">DELETE</button>
+                <button class="update-button">UPDATE</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Category ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Employee rows will be inserted dynamically here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

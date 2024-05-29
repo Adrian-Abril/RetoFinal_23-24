@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="CSS/carrito.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <header>
+        <div id="nav_logo">
+            <img src="IMAGENES/Header Logo.png" alt="logo" width="100vh" class="nav_logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="entrantes.html">MENUS</a></li>
+                <li><a href="location.html">LOCATION</a></li>
+                <li class="botonpedidos"><a href="carrito.html">ORDER</a></li>
+
+                <li id="loginButton" class="botonpedidos">
+                    <a href="login.html">LOGIN</a></li>
+                <li id="logoutButton" class="botonpedidos" style="display:none;">
+                    <a href="#" onclick="logout()">LOG OUT</a></li>
+                <li id="registerButton" class="botonpedidos" style="display:none;">
+                    <a href="register.html">REGISTER</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // Agregar evento de carga del documento para verificar si el usuario está autenticado
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar si el usuario está autenticado
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            // Si el usuario está autenticado, ocultar el botón de "Login" y "Register", y mostrar el de "Log out"
+            if (isLoggedIn) {
+                const loginButton = document.getElementById('loginButton');
+                loginButton.style.display = 'none';
+                const logoutButton = document.getElementById('logoutButton');
+                logoutButton.style.display = 'block';
+                const registerButton = document.getElementById('registerButton');
+                registerButton.style.display = 'none';
+            }
+        });
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.setItem('isLoggedIn', 'false'); // Marcar al usuario como no autenticado
+            window.location.href = 'index.html'; // Redirigir a la página de inicio
+        }
+    </script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
+<div class="container">
+    <main>
+        <div class="content-wrapper">
+            <section class="products">
+                <h2>Products</h2>
+                <ul id="products-list">
+                    <!-- Aquí se listarán los productos -->
+                </ul>
+            </section>
+            
+            <section class="cart">
+                <h2>Shopping Cart</h2>
+                <ul id="cart-items">
+                    <!-- Aquí se listarán los productos del carrito -->
+                </ul>
+                <div class="cart-total">
+                    <h3>Total:</h3>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button class="btn-primary">
+                    <a href="payday.html" id="checkout-btn">Pagar</a>
+                </button>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', async () => {
+    // Verificar si el usuario está autenticado
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    // Si el usuario no está autenticado, redirigir a la página de inicio de sesión
+    if (!isLoggedIn) {
+        window.location.href = 'login.html';
+    }
+
+    const productList = document.getElementById('products-list');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    let cart = [];
+    let total = 0;
+
+        // Función para agregar un producto al carrito
+        function addToCart(productName, price) {
+            const existingItem = cart.find(item => item.name === productName);
+            if (existingItem) {
+                // Si el producto ya está en el carrito, aumenta su contador y actualiza la cantidad total
+                existingItem.quantity++;
+                existingItem.totalPrice += price;
+                total += price;
+                // Encuentra el elemento del carrito correspondiente y actualiza su HTML
+                const cartItem = cartItems.querySelector(`li[data-name="${productName}"]`);
+                cartItem.querySelector('.quantity').innerText = existingItem.quantity;
+                cartItem.querySelector('.total-price').innerText = `$${existingItem.totalPrice.toFixed(2)}`;
+            } else {
+                // Si es un nuevo producto, crea un nuevo elemento en el carrito
+                const item = document.createElement('li');
+                item.setAttribute('data-name', productName);
+                item.innerHTML = `
+                    <div>
+                        <h3>${productName}</h3>
+                        <p>$${price}</p>
+                    </div>
+                    <div>
+                        <span class="quantity">1</span>
+                        <button class="remove-btn">X</button>
+                        <span class="total-price">$${price.toFixed(2)}</span>
+                    </div>
+                `;
+                cartItems.appendChild(item);
+
+                cart.push({ name: productName, price: price, quantity: 1, totalPrice: price });
+                total += price;
+            }
+            cartTotal.innerText = `$${total.toFixed(2)}`;
+        }
+
+        // Función para eliminar un producto del carrito
+        function removeFromCart(productName, price) {
+            const existingItem = cart.find(item => item.name === productName);
+            if (existingItem) {
+                existingItem.quantity--;
+                existingItem.totalPrice -= price;
+                total -= price;
+                const cartItem = cartItems.querySelector(`li[data-name="${productName}"]`);
+                const quantityElement = cartItem.querySelector('.quantity');
+                if (existingItem.quantity === 0) {
+                    // Si la cantidad llega a 0, eliminar el elemento del carrito
+                    cart.splice(cart.indexOf(existingItem), 1);
+                    cartItem.remove();
+                } else {
+                    // Actualizar la cantidad y el precio total
+                    quantityElement.innerText = existingItem.quantity;
+                    cartItem.querySelector('.total-price').innerText = `$${existingItem.totalPrice.toFixed(2)}`;
+                }
+                cartTotal.innerText = `$${total.toFixed(2)}`;
+            }
+        }
+
+        // Agregar eventos de click a los botones "Eliminar"
+        cartItems.addEventListener('click', (event) => {
+            if (event.target.classList.contains('remove-btn')) {
+                const productName = event.target.parentElement.parentElement.getAttribute('data-name');
+                const productPrice = parseFloat(event.target.parentElement.previousElementSibling.querySelector('p').textContent.slice(1));
+                removeFromCart(productName, productPrice);
+            }
+        });
+
+        // Función para procesar el pago
+        checkoutBtn.addEventListener('click', () => {
+            alert(`Total a pagar: $${total.toFixed(2)}`);
+        });
+
+        const getProductos = async () => {
+            try {
+                const url = 'http://localhost:8080/burgerFrame/Controller?ACTION=PRODUCTO.FIND_ALL';
+                const response = await fetch(url);
+                const productos = await response.json();
+                createProductoDetail(productos);
+            } catch (error) {
+                console.error('Error fetching productos:', error);
+            }
+        };
+
+        const createProductoDetail = (productos) => {
+            productList.innerHTML = '';
+
+            productos.forEach(producto => {
+                const { idProducto, nombre, descripcion, precio, imagen, idCatProducto } = producto;
+
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div class="estilo">
+                        <img src="${imagen}" alt="${nombre}">
+                        <p>${nombre}</p>
+                        <p>$${precio}</p>
+                        <button class="add-btn" data-name="${nombre}" data-price="${precio}">Agregar al Carrito</button>
+                    </div>
+                `;
+                productList.appendChild(listItem);
+            });
+
+            const addButtons = document.querySelectorAll('.add-btn');
+            addButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const productName = button.getAttribute('data-name');
+                    const productPrice = parseFloat(button.getAttribute('data-price'));
+                    addToCart(productName, productPrice);
+                });
+            });
+        };
+
+        getProductos();
+    });
+    
+
+    
+</script>
+    <footer>
+        <div class="contenedor-footer">
+            <span class="cook">©2024 BURGERFRAME GROUP, ALL RIGHTS RESERVED</span>
+            <div class="cook">
+                <a href="https://www.cookiepolicygenerator.com/live.php?token=Q0uU2XcYt5VDdWCQ9Llpu22n9X6GMfTA
+                ">Cookies</a></li>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/login.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="login">
+            <div class="title"><span>burgerFrame Admin</span></div>
+            <form id="loginForm">
+                <div class="row">
+                    <input type="text" id="username" placeholder="Email or Phone" required>
+                </div>
+                <div class="row">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="row button">
+                    <input type="submit" value="Login">
+                </div>
+                <div id="errorMessage" style="color: red; display: none;">Usuario o contraseña incorrectos</div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'admin123') {
+                localStorage.setItem('isAuthenticated', 'true');
+                window.location.href = 'zona_privada_products.html';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

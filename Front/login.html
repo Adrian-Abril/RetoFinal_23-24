@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/login.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="login">
+            <div class="title">
+                <a href="index.html" class="casita">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 3l29 29h-8v29h-14V41H25v20H11V32H3z" fill="#ffffff"/>
+                    </svg>
+                </a>
+                <span>burgerFrame</span>
+            </div>
+            <form id="loginForm">
+                <div class="row">
+                    <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="Email or Phone" required>
+                </div>
+                <div class="row">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="row button">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">Not a member? <a href="register.html">Signup now</a></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const emailOrPhone = document.getElementById('emailOrPhone').value;
+    const password = document.getElementById('password').value;
+
+    const data = {
+        emailOrPhone: emailOrPhone,
+        password: password
+    };
+
+    fetch('http://localhost:8080/burgerFrame/Controller?ACTION=CLIENTE.LOGIN', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message); // Verificar el mensaje recibido del servidor
+        if (data.message === "Login successful") {
+            console.log("Redireccionando a carrito.html");
+            localStorage.setItem('isLoggedIn', 'true'); // Establecer la bandera de inicio de sesión
+            window.location.href = 'carrito.html'; // Redirigir solo si el inicio de sesión es exitoso
+        } else {
+            alert('Login failed: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+    </script>
+</body>
+
+</html>

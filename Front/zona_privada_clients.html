@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients</title>
+    <link rel="stylesheet" href="private1.css">
+    <script defer src="js/clients.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>ADMIN</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="zona_privada_products.html">PRODUCTS</a></li>
+            <li><a href="zona_privada_orders.html">ORDERS</a></li>
+            <li class="active"><a href="#">CLIENTS</a></li>
+            <li><a href="zona_privada_employees.html">EMPLOYEES</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#" class="logout-button">LOG OUT</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Clients</h1>
+            <div class="actions">
+                <button class="add-button">ADD</button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Client ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Client rows will be inserted dynamically here -->
+                </tbody>
+            </table>
+        </div>
+        <div id="add-client-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <form id="add-client-form">
+                    <h2>Add Client</h2>
+                    <label for="client-id">Client ID:</label>
+                    <input type="text" id="client-id" name="client-id" required><br>
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" required><br>
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required><br>
+                    <input type="submit" value="Add Client">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

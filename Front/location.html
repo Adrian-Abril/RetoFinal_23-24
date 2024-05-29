@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/location.css">
+    <link rel="icon" href="IMAGENES/Header Logo.png">
+    <title>BURGERFRAME</title>
+    
+<!-- Cookies no tocar -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB7HJ8K');</script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="./css/estilos.css">
+</head>
+        <div class="aviso-cookies" id="aviso-cookies">
+            <h3 class="titulo">Cookies</h3>
+            <p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+            <button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
+            <a class="enlace" href="aviso-cookies.html">Aviso de Cookies</a>
+        </div>
+        <div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+        <script src="js/aviso-cookies.js"></script>
+<!-- Cookies hasta aqui -->
+<body>
+    <header>
+        <div id="nav_logo">
+            <img src="IMAGENES/Header Logo.png" alt="logo" width="100vh" class="nav_logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="entrantes.html">MENUS</a></li>
+                <li><a href="location.html">LOCATION</a></li>
+                <li class="botonpedidos"><a href="carrito.html">ORDER</a></li>
+
+                <li id="loginButton" class="botonpedidos">
+                    <a href="login.html">LOGIN</a></li>
+                <li id="logoutButton" class="botonpedidos" style="display:none;">
+                    <a href="#" onclick="logout()">LOG OUT</a></li>
+                <li id="registerButton" class="botonpedidos" style="display:none;">
+                    <a href="register.html">REGISTER</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // Agregar evento de carga del documento para verificar si el usuario está autenticado
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar si el usuario está autenticado
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            // Si el usuario está autenticado, ocultar el botón de "Login" y "Register", y mostrar el de "Log out"
+            if (isLoggedIn) {
+                const loginButton = document.getElementById('loginButton');
+                loginButton.style.display = 'none';
+                const logoutButton = document.getElementById('logoutButton');
+                logoutButton.style.display = 'block';
+                const registerButton = document.getElementById('registerButton');
+                registerButton.style.display = 'none';
+            }
+        });
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.setItem('isLoggedIn', 'false'); // Marcar al usuario como no autenticado
+            window.location.href = 'index.html'; // Redirigir a la página de inicio
+        }
+    </script>
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+    
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+            });
+        </script>
+    <div class="location">
+        <div class="locationtitle">Contact Information</div>
+
+        <div class="locationbody">
+            <div class="locationsubtitle">BURGERFRAME - Recogida</div>
+            <div>CALLE INVENTADA 4, ZARAGOZA, 12345</div>
+            <div>+1234567890</div>
+            <div class="locationcollection">HORARIO DE RECOGIDA</div>
+            <div>Lunes - Jueves 13:30 - 23:00</div>
+            <div>Viernes - Sábado 13:30 - 23:45</div>
+            <div>Domingo 13:30 - 23:00</div>
+        </div>
+
+        <div>
+            <img class="locationmap"
+                src="https://maps.googleapis.com/maps/api/staticmap?center=43.2643484521559,-2.94280874785042&amp;scale=2&amp;zoom=12&amp;size=400x300&amp;format=png32&amp;scale=1&amp;maptype=roadmap&amp;markers=size:mid|43.2643484521559,-2.94280874785042&amp;key=AIzaSyDPmaK_ZeZzYITQHT9KpftobsXIz3r8SWo">
+        </div>
+
+    </div>
+    <footer>
+        <div class="contenedor-footer">
+            <span class="cook">©2024 BURGERFRAME GROUP, ALL RIGHTS RESERVED</span>
+            <div class="cook">
+                <a href="https://www.cookiepolicygenerator.com/live.php?token=Q0uU2XcYt5VDdWCQ9Llpu22n9X6GMfTA
+                ">Cookies</a></li>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

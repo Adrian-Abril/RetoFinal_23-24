@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="private1.css">
+    <script src="js/products.js" defer></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>ADMIN</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="active"><a href="#">PRODUCTS</a></li>
+            <li><a href="zona_privada_orders.html">ORDERS</a></li>
+            <li><a href="zona_privada_clients.html">CLIENTS</a></li>
+            <li><a href="zona_privada_employees.html">EMPLOYEES</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#" class="logout-button">LOG OUT</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Products</h1>
+            <div class="actions">
+                <button class="add-button">ADD</button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ProductID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>CategoryID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Product rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Modal for adding a product -->
+        <div id="add-product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <form id="add-product-form">
+                    <h2>Add Product</h2>
+                    <label for="ID_PRODUCTO">ID_PRODUCTO:</label>
+                    <input type="text" id="ID_PRODUCTO" name="ID_PRODUCTO" required><br>
+                    <label for="NOMBRE">NOMBRE:</label>
+                    <input type="text" id="NOMBRE" name="NOMBRE" required><br>
+                    <label for="DESCRIPCION">DESCRIPCION:</label>
+                    <input type="text" id="DESCRIPCION" name="DESCRIPCION" required><br>
+                    <label for="PRECIO">PRECIO:</label>
+                    <input type="number" id="PRECIO" name="PRECIO" required><br>
+                    <label for="IMAGEN">IMAGEN:</label>
+                    <input type="text" id="IMAGEN" name="IMAGEN" required><br>
+                    <label for="ID_CATPRODUCTO">ID_CATPRODUCTO:</label>
+                    <input type="text" id="ID_CATPRODUCTO" name="ID_CATPRODUCTO" required><br>
+                    <input type="submit" value="Add Product">
+                </form>
+            </div>
+        </div>
+        <!-- Modal for editing a product -->
+        <div id="edit-product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <form id="edit-product-form">
+                    <h2>Edit Product</h2>
+                    <input type="hidden" id="edit-id-producto" name="ID_PRODUCTO">
+                    <label for="edit-nombre">Nombre:</label>
+                    <input type="text" id="edit-nombre" name="NOMBRE" required><br>
+                    <label for="edit-descripcion">Descripción:</label>
+                    <input type="text" id="edit-descripcion" name="DESCRIPCION" required><br>
+                    <label for="edit-precio">Precio:</label>
+                    <input type="number" id="edit-precio" name="PRECIO" required><br>
+                    <label for="edit-imagen">Imagen:</label>
+                    <input type="text" id="edit-imagen" name="IMAGEN" required><br>
+                    <label for="edit-id-catproducto">Categoría:</label>
+                    <input type="text" id="edit-id-catproducto" name="ID_CATPRODUCTO" required><br>
+                    <input type="submit" value="Update Product">
+                    <button type="button" class="cancel-button">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

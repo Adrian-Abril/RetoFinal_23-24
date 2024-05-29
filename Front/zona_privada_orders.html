@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="private1.css">
+    <script src="js/orders.js" defer></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>ADMIN</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="zona_privada_products.html">PRODUCTS</a></li>
+            <li class="active"><a href="#">ORDERS</a></li>
+            <li><a href="zona_privada_clients.html">CLIENTS</a></li>
+            <li><a href="zona_privada_employees.html">EMPLOYEES</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#" class="logout-button">LOG OUT</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Orders</h1>
+            <div class="actions">
+                <button class="add-button">ADD</button>
+            </div>
+        </div>
+        <table id="detalle-table">
+            <thead>
+                <tr>
+                    <th>ID_DETALLE</th>
+                    <th>ID_PEDIDOS</th>
+                    <th>ID_PRODUCTO</th>
+                    <th>CANTIDAD</th>
+                    <th>PRECIO</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+        <!-- Aquí puedes agregar un formulario para agregar detalles si es necesario -->
+    </div>
+    <form id="add-detalle-form" style="display: none;">
+        <h2>Add Detalle</h2>
+        <label for="add-detalle-id">ID Detalle:</label>
+        <input type="text" id="add-detalle-id" name="add-detalle-id" required><br>
+        <label for="add-pedido-id">ID Pedido:</label>
+        <input type="text" id="add-pedido-id" name="add-pedido-id" required><br>
+        <label for="add-producto-id">ID Producto:</label>
+        <input type="text" id="add-producto-id" name="add-producto-id" required><br>
+        <label for="add-cantidad">Cantidad:</label>
+        <input type="number" id="add-cantidad" name="add-cantidad" required><br>
+        <label for="add-precio">Precio:</label>
+        <input type="number" id="add-precio" name="add-precio" required><br>
+        <input type="submit" value="Add Detalle">
+    </form>
+    
+    <div id="edit-detalle-form" style="display: none;">
+        <form>
+            <input type="hidden" id="edit-detalle-id">
+            <label for="edit-pedido-id">ID Pedido:</label>
+            <input type="text" id="edit-pedido-id" required><br>
+            <label for="edit-producto-id">ID Producto:</label>
+            <input type="text" id="edit-producto-id" required><br>
+            <label for="edit-cantidad">Cantidad:</label>
+            <input type="number" id="edit-cantidad" required><br>
+            <label for="edit-precio">Precio:</label>
+            <input type="number" id="edit-precio" required><br>
+            <button type="submit">Update Detalle</button>
+            <button type="button" onclick="hideEditDetalleForm()">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

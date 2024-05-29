@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/contenedor1.css">
+    <link rel="stylesheet" href="css/contenedor2.css">
+    <link rel="stylesheet" href="css/contenedor3.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="icon" href="IMAGENES/Header Logo.png">
+    <title>BURGERFRAME</title>
+
+    <!-- Cookies no tocar -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MB7HJ8K');</script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <!-- Cookies hasta aqui -->
+</head>
+
+<body>
+    <header>
+        <div id="nav_logo">
+            <img src="IMAGENES/Header Logo.png" alt="logo" width="100vh" class="nav_logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="entrantes.html">MENUS</a></li>
+                <li><a href="location.html">LOCATION</a></li>
+                <li class="botonpedidos"><a href="carrito.html">ORDER</a></li>
+
+                <li id="loginButton" class="botonpedidos">
+                    <a href="login.html">LOGIN</a>
+                </li>
+                <li id="logoutButton" class="botonpedidos" style="display:none;">
+                    <a href="#" onclick="logout()">LOG OUT</a>
+                </li>
+                <li id="registerButton" class="botonpedidos" style="display:none;">
+                    <a href="register.html">REGISTER</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // Agregar evento de carga del documento para verificar si el usuario está autenticado
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar si el usuario está autenticado
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            // Si el usuario está autenticado, ocultar el botón de "Login" y "Register", y mostrar el de "Log out"
+            if (isLoggedIn) {
+                const loginButton = document.getElementById('loginButton');
+                loginButton.style.display = 'none';
+                const logoutButton = document.getElementById('logoutButton');
+                logoutButton.style.display = 'block';
+                const registerButton = document.getElementById('registerButton');
+                registerButton.style.display = 'none';
+            }
+        });
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.setItem('isLoggedIn', 'false'); // Marcar al usuario como no autenticado
+            window.location.href = 'index.html'; // Redirigir a la página de inicio
+        }
+    </script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
+    <div class="inicio">
+        <div id="contenedor1" class="contenedor1">
+            <div class="table_izq">
+                <img src="IMAGENES/INDEX/inicio.jpg" alt="foto1" class="foto1">
+            </div>
+            <div class="table_der">
+                <img src="IMAGENES/Header Logo.png" alt="table_logo" class="table_logo">
+                <button class="table_boton"><a href="carrito.html" class="boton_a">Order Now</a></button>
+                <p class="table_p">306 E Thompson Ln, Nashville, TN 37211, United States</p>
+            </div>
+        </div>
+        <div id="contenedor2" class="contenedor2">
+            <div class="contenedor2a">
+                <img src="IMAGENES/TEXT/why us.png" class="text_cont2">
+            </div>
+            <div class="contenedor2b">
+                <div class="imagen-c2">
+                    <img src="IMAGENES/INDEX/hamburgesa.png" class="foto_cont2">
+                </div>
+                <div class="textos-c2">
+
+                    <div>Our commitment to quality starts with the finest, locally-sourced ingredients.
+                        Our beef is 100% organic and grass-fed, ensuring every bite is juicy, flavorful,
+                        and free from hormones and antibiotics.
+                    </div>
+
+                    <div>
+                        Each burger is crafted with passion and precision by our expert chefs.
+                        From classic favorites to innovative creations, our diverse menu offers something for every
+                        palate.
+                        Enjoy the perfect blend of textures and flavors in every bite.
+                    </div>
+                </div>
+                <div class="imagen-c2">
+                    <img src="IMAGENES/INDEX/atlas.png" class="foto_cont2">
+                </div>
+            </div>
+        </div>
+
+        <div id="contenedor3" class="contenedor3">
+            <div class="contenedormenu">
+                <img src="IMAGENES/TEXT/menutext.png" class="foto_cont3">
+            </div>
+
+            <div class="contenedor-cartas">
+
+                <div class="cards-c3">
+                    <a href="entrantes.html">
+                        <img class="imagen-c3" src="IMAGENES/INDEX/ENTRANTES_EN.png" alt="ENTRANTES">
+                    </a>
+                </div>
+
+                <div class="cards-c3">
+                    <a href="burgers.html">
+                        <img class="imagen-c3" src="IMAGENES/INDEX/BURGERS_EN.png" alt="HAMBURGUESAS">
+                    </a>
+                </div>
+
+                <div class="cards-c3">
+                    <a href="postres.html">
+                        <img class="imagen-c3" src="IMAGENES/INDEX/POSTRE_EN.png" alt="POSTRES">
+                    </a>
+                </div>
+
+                <div class="cards-c3">
+                    <a href="bebidas.html">
+                        <img class="imagen-c3" src="IMAGENES/INDEX/BEBIDAS_EN.png" alt="BEBIDAS">
+                    </a>
+                </div>
+
+                <div class="cards-c3">
+                    <a href="menus.html">
+                        <img class="imagen-c3" src="IMAGENES/INDEX/MENUS_EN.png" alt="MENÚS">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="contenedor-footer">
+            <span class="cook">©2024 BURGERFRAME GROUP, ALL RIGHTS RESERVED</span>
+            <div class="cook">
+                <a href="https://www.cookiepolicygenerator.com/live.php?token=Q0uU2XcYt5VDdWCQ9Llpu22n9X6GMfTA
+                ">Cookies</a></li>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
