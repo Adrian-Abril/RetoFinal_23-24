@@ -33,4 +33,5 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .locationmap{
     width: 400px;
+    border: 2px green solid;
 }
